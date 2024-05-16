@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="549.0" prefWidth="751.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baller.example.sexyvanialoanclient.ReturnMenuController">
+    <children>
+        <HBox prefHeight="158.0" prefWidth="751.0">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="158.0" prefWidth="325.0" style="-fx-background-color: #1DAD;">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter search phrase:" textAlignment="CENTER" wrappingWidth="212.13671875">
+                            <font>
+                                <Font name="Book Antiqua" size="22.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="keywordTextField">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <Button fx:id="returnButton" mnemonicParsing="false" onAction="#onReturnBookMediaButtonClick" text="Return selected book/media">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="returnToUserMenuButton" mnemonicParsing="false" onAction="#returnToUserMenuPage" prefHeight="25.0" prefWidth="130.0" text="Return to menu">
+                            <VBox.margin>
+                                <Insets top="8.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox fillWidth="false" prefHeight="158.0" prefWidth="651.0" style="-fx-background-color: #1DAD;">
+                    <children>
+                        <TextArea prefHeight="78.0" prefWidth="545.0" style="-fx-background-color: WHITE;" text="Book-genres: [Sci-Fi, Novel ,Horror,'Romance','Drama','Fantasy','Mystery','Adventure','Tragedy','Historical Fiction','Magic Realism','Gothic Fiction','Modernism','Dystopian','Science Fiction','Philosophical Novel','Modernist','Semi-autobiographical Fiction','Autobiography','Absurdist Fiction','Children''s Literature']" wrapText="true">
+                            <font>
+                                <Font name="Book Antiqua" size="18.0" />
+                            </font>
+                        </TextArea>
+                        <TextArea prefHeight="79.0" prefWidth="545.0" style="-fx-background-color: WHITE;" text="Media-types: [Dvd, Game, CD, Magazine]" wrapText="true">
+                            <font>
+                                <Font name="Book Antiqua" size="18.0" />
+                            </font>
+                        </TextArea>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <TableView fx:id="tableView" editable="true" onMouseClicked="#getSelectedItem" prefHeight="392.0" prefWidth="751.0">
+            <columns>
+                <TableColumn fx:id="titleColumn" prefWidth="137.0" text="Title" />
+                <TableColumn fx:id="genreMediaTypeColumn" prefWidth="107.0" text="Genre/Media-type" />
+                <TableColumn fx:id="authorColumn" minWidth="0.0" prefWidth="122.0" text="Author" />
+            <TableColumn fx:id="loanDateColumn" maxWidth="125.0" minWidth="-1.0" prefWidth="125.0" text="Loan date" />
+            <TableColumn fx:id="returnDateColumn" prefWidth="90.0" text="Return Date" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
